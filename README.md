@@ -1,13 +1,8 @@
 # Deployment Steps:
 
-To deploy the Udagram, We need to generate 4 things (EC2, RDS , EB , S3 Bucket):
+To deploy the Udagram, We need to generate 3 things (RDS , EB , S3 Bucket):
 
-## 1st: EC2 Instance:
-
-1. Create EC2 Instance using AWS EC Console (I named my instance `udagram`).
-2. Generate pem file to connect ssh.
-
-## 2nd: RDS:
+## 1st: RDS:
 
 1. Create RDS using AWS (it named `database-2`).
 2. Edit the security group's inbound rule to allow incoming connections from anywhere.
@@ -25,7 +20,7 @@ To deploy the Udagram, We need to generate 4 things (EC2, RDS , EB , S3 Bucket):
 
    ![ migration file](assets/migrations.png "migration")
 
-## 3rd: S3 Bucket:
+## 2nd: S3 Bucket:
 
 1. Create empty bucket using CLI or S3 Console (I named it `myproject4212`).
 2. Edit the properties of the bucket to:
@@ -40,7 +35,7 @@ To deploy the Udagram, We need to generate 4 things (EC2, RDS , EB , S3 Bucket):
 
    ![.env file](assets/deploy-sh.png ".env")
 
-## 4th: EB:
+## 3rd: EB:
 
 1. Create eb app and enviroment using the CLI or EB Console (my eb app name is `udagram-api` & eb environment is `udagram-env`).
 2. cd to where the pem file is located and then setup ssh file to EC instance that is created in first step.
@@ -76,4 +71,4 @@ To deploy the Udagram, We need to generate 4 things (EC2, RDS , EB , S3 Bucket):
 
 1. S3 Bucket should be filled with the udagram-frontend www files, once **CircleCi finish deploying**.
 2. Another S3 Bucket (automatically generated and filled) once the deployment of the udagram-api is finished (in my case it named `elasticbeanstalk-us-east-1-743130364212`).
-3. Another EC2 Incstance is automatically created once **eb env** is created (in my case it named `udagram-env`).
+3. EC2 Incstance is automatically created once **eb env** is created (in my case it named `udagram-env`).
