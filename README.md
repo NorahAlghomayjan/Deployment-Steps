@@ -39,7 +39,7 @@ To deploy the Udagram, We need to generate 3 things (RDS , EB , S3 Bucket):
 
 1. Create eb app and enviroment using the CLI or EB Console (my eb app name is `udagram-api` & eb environment is `udagram-env`).
 2. cd to where the pem file is located and then setup ssh file to EC instance that is created in first step.
-3. Automate enviroment variables to be pushed from the CircleCi the newly created (eb app), by adding the follwing script to the udagram-api/bin/deploy.sh:
+3. Automate enviroment variables to be pushed from the CircleCi the newly created (eb app), by adding the following script to the udagram-api/bin/deploy.sh:
 
    `eb setenv AWS_ACCESS_KEY_ID=AWS_ACCESS_KEY_ID AWS_BUCKET=AWS_BUCKET AWS_DEFAULT_REGION=AWS_DEFAULT_REGION AWS_PROFILE=AWS_PROFILE AWS_REGION=AWS_REGION AWS_SECRET_ACCESS_KEY=AWS_SECRET_ACCESS_KEY JWT_SECRET=JWT_SECRET POSTGRES_DB=POSTGRES_DB POSTGRES_DB=POSTGRES_HOST POSTGRES_PASSWORD=POSTGRES_PASSWORD POSTGRES_USERNAME=POSTGRES_USERNAME URL=URL`
 
