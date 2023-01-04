@@ -45,7 +45,9 @@ To deploy the Udagram, We need to generate 3 things (RDS , EB , S3 Bucket):
 
    then, call this deploy.sh in the udagram-api/package.json
 
-   `npm run build && eb list && eb use udagram-api-dev && chmod +x bin/deploy.sh && eb deploy`
+   ```json
+   "deploy": "npm run build && eb list && eb use udagram-api-dev && chmod +x bin/deploy.sh && eb deploy"
+   ```
 
    Note: the environment variables in deploy.sh should match the environment variables in CircleCi pipeline
 
